@@ -212,9 +212,7 @@ def show_account():
 @app.route('/locations')
 def show_locations():
     """Show local pickup locations"""
-
-  """  pickups = db.session.query(Pickup).filter(Pickup.pickup_id > 1).all()
-    return render_template("locations.html", pickups=pickups)"""
+ 
     if os.environ["LOCATION_FEATURE_ENABLED"] == "True":
         pickups = db.session.query(Pickup).filter(Pickup.pickup_id > 1).all()
         return render_template("locations.html", pickups=pickups)
