@@ -19,14 +19,17 @@ spec:
         app: app 
     spec:
       containers:
+
       - envFrom:
+        - configMapRef:
+           name: feature-toggle
         - secretRef:
             name: db-secret
         name: app-deployment
         image: harbor.dev.afsmtddso.com/rparamathmuni-harbor-project/app:971c881-621607c
         ports:
         - containerPort: 5000
-/*test*/
+
 
 
 
